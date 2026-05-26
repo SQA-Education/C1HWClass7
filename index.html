@@ -57,9 +57,9 @@ audio{width:100%;margin-top:14px}.hidden{display:none}
 .btn-back:hover{background:#e5e7eb}
 
 .option.correct-reveal{background:#dcfce7 !important;border-color:#22c55e !important;color:#166534}
-.option.correct-reveal::after{content:" ✓";font-weight:700;color:#16a34a}
+.option.correct-reveal::after{content:" \2713";font-weight:700;color:#16a34a}
 .option.wrong-reveal{background:#fee2e2 !important;border-color:#ef4444 !important;color:#991b1b}
-.option.wrong-reveal::after{content:" ✗";font-weight:700;color:#dc2626}
+.option.wrong-reveal::after{content:" \2717";font-weight:700;color:#dc2626}
 .option.review-locked{pointer-events:none;cursor:default}
 </style>
 </head>
@@ -83,7 +83,7 @@ audio{width:100%;margin-top:14px}.hidden{display:none}
 <option value="3100" data-teacher="Hector Amaya">3100 - Tue/Thu 6:30 PM (Hector)</option>
 </optgroup>
 </select>
-<button class="btn" onclick="startQuiz()">Start Homework →</button>
+<button class="btn" onclick="startQuiz()">Start Homework &rarr;</button>
 <div class="note">This homework practices Class 7 content: Thriving Under Pressure and the Present Perfect Continuous (<em>have/has been + verb-ing</em>).</div>
 </div>
 </div>
@@ -100,60 +100,60 @@ audio{width:100%;margin-top:14px}.hidden{display:none}
 <p>Maria admits the pressure has not disappeared entirely. But having a routine, setting clear limits on her working hours, and asking for support when needed have been her most effective tools so far.</p>
 </div>
 <div id="readingQuestions"></div>
-<button class="btn" onclick="checkS1()">Continue →</button>
+<button class="btn" onclick="checkS1()">Continue &rarr;</button>
 </div>
 </div>
 
 <div class="section" id="s2">
 <div class="card">
-<button type="button" class="btn-back" onclick="showSection('s1')">← Back</button>
+<button type="button" class="btn-back" onclick="showSection('s1')">&larr; Back</button>
 <div class="progress"><div class="progress-bar" style="width:40%"></div></div>
 <h2>2. Vocabulary</h2>
 <p class="small">Match the stress and wellbeing word or phrase to its meaning.</p>
 <div class="word-bank" id="wordBank"></div>
 <div id="vocabDrops"></div>
-<button class="btn" onclick="checkS2()">Continue →</button>
+<button class="btn" onclick="checkS2()">Continue &rarr;</button>
 </div>
 </div>
 
 <div class="section" id="s3">
 <div class="card">
-<button type="button" class="btn-back" onclick="showSection('s2')">← Back</button>
+<button type="button" class="btn-back" onclick="showSection('s2')">&larr; Back</button>
 <div class="progress"><div class="progress-bar" style="width:60%"></div></div>
 <h2>3. Writing</h2>
-<p class="small"><strong>Thriving Under Pressure - Present Perfect Continuous:</strong> Write 7–9 sentences about a stressful situation at work or in daily life. Explain what has been happening and what strategies have been helping.</p>
+<p class="small"><strong>Thriving Under Pressure - Present Perfect Continuous:</strong> Write 7&ndash;9 sentences about a stressful situation at work or in daily life. Explain what has been happening and what strategies have been helping.</p>
 <textarea id="writing" placeholder="I have been working long hours lately, and the pressure has been building. Recently, I have been trying new strategies to manage my stress..."></textarea>
 <p class="small" style="text-align:right">Words: <span id="wc">0</span></p>
 <div class="tip-box"><strong>Grammar tip:</strong> Present Perfect Continuous = <em>have/has + been + verb-ing</em>. Use this for actions that started in the past and are still ongoing or recently stopped. Example: <em>I have been studying for three hours.</em> / <em>She has been working from home since March.</em></div>
 <div id="wFeedback" class="feedback hidden"></div>
-<button class="btn" id="wBtn" onclick="checkWriting()">Get Feedback →</button>
-<button class="btn hidden" id="wNext" onclick="showSection('s4')">Continue →</button>
+<button class="btn" id="wBtn" onclick="checkWriting()">Continue &rarr;</button>
+<button class="btn hidden" id="wNext" onclick="showSection('s4')">Continue &rarr;</button>
 </div>
 </div>
 
 <div class="section" id="s4">
 <div class="card">
-<button type="button" class="btn-back" onclick="showSection('s3')">← Back</button>
+<button type="button" class="btn-back" onclick="showSection('s3')">&larr; Back</button>
 <div class="progress"><div class="progress-bar" style="width:80%"></div></div>
 <h2>4. Speaking</h2>
-<p>Speak for 45–60 seconds giving practical advice for someone who feels overwhelmed by work or personal pressure.</p>
+<p>Speak for 45&ndash;60 seconds giving practical advice for someone who feels overwhelmed by work or personal pressure.</p>
 <div class="record-btn" id="recBtn" onclick="toggleRec()"><div class="record-dot"></div></div>
 <div class="timer" id="timer">0:00</div>
 <div class="status" id="recStatus">Click to start recording</div>
 <audio id="audio" controls class="hidden"></audio>
 <div id="transcriptBox" class="transcript-box hidden"></div>
 <div id="sFeedback" class="feedback hidden"></div>
-<button class="btn" id="sBtn" onclick="checkSpeaking()">Continue →</button>
+<button class="btn" id="sBtn" onclick="checkSpeaking()">Continue &rarr;</button>
 </div>
 </div>
 
 <div class="section" id="s5">
 <div class="card">
-<button type="button" class="btn-back" onclick="showSection('s4')">← Back</button>
+<button type="button" class="btn-back" onclick="showSection('s4')">&larr; Back</button>
 <div class="progress"><div class="progress-bar" style="width:100%"></div></div>
 <h2>5. Grammar</h2>
 <div id="grammarQuestions"></div>
-<button class="btn btn-orange" onclick="submitFinal()">Submit Homework ✓</button>
+<button class="btn btn-orange" onclick="submitFinal()">Submit Homework &check;</button>
 </div>
 </div>
 
@@ -165,17 +165,16 @@ audio{width:100%;margin-top:14px}.hidden{display:none}
 <div class="scores">
 <div><label>Reading</label><span id="scL">0/3</span></div>
 <div><label>Vocab</label><span id="scV">0/6</span></div>
-<div><label>Writing</label><span id="scW">0/20</span></div>
+<div><label>Writing</label><span id="scW">&#128105;&#8205;&#127979;</span></div>
 <div><label>Speaking</label><span id="scS">0/20</span></div>
 <div><label>Grammar</label><span id="scG">0/8</span></div>
 </div>
-<button type="button" class="btn" onclick="reviewGrammar()" style="background:#f3f4f6;color:#5B5091;border:1px solid #d1d5db;margin-bottom:10px">📝 Review Your Grammar Answers</button><button class="btn btn-orange" style="margin-top:20px" id="submitBtn" onclick="submitToTeacher()">Finish →</button><div id="submitStatus" style="display:none;margin-top:16px;background:#f0fdf4;border:2px solid #22c55e;border-radius:12px;padding:16px;text-align:center;color:#15803d"></div>
+<button type="button" class="btn" onclick="reviewGrammar()" style="background:#f3f4f6;color:#5B5091;border:1px solid #d1d5db;margin-bottom:10px">&#128221; Review Your Grammar Answers</button><button class="btn btn-orange" style="margin-top:20px" id="submitBtn" onclick="submitToTeacher()">Finish &rarr;</button><div id="submitStatus" style="display:none;margin-top:16px;background:#f0fdf4;border:2px solid #22c55e;border-radius:12px;padding:16px;text-align:center;color:#15803d"></div>
 </div>
 </div>
 </div>
 
 <script>let submitted=false;
-function isRealSpeech(t){if(!t||!t.trim())return false;var w=t.trim().split(' ').filter(Boolean);return w.length>=3;}
 function setTeacher(sel){
   const opt=sel.options[sel.selectedIndex];
   document.getElementById('teacherName').value=opt?(opt.getAttribute('data-teacher')||''):'';
@@ -270,33 +269,19 @@ let c=0;document.querySelectorAll('.drop-target').forEach(t=>{if(t.textContent==
 
 document.addEventListener('DOMContentLoaded',function(){var we=document.getElementById('writing');if(we)we.addEventListener('input',function(){var wc=document.getElementById('wc');if(wc)wc.textContent=this.value.trim().split(' ').filter(Boolean).length;});});
 function checkWriting(){
-  writingText=document.getElementById('writing').value;
-  const text=writingText.toLowerCase();
-  let score=14;
-  const words=text.trim().split(/\s+/).filter(Boolean);
-  const wordCount=words.length;
-  // Check for Present Perfect Continuous: "have/has been + verb-ing"
-  const ppc=(text.match(/\b(have|has|haven't|hasn't|have not|has not)\s+been\s+\w+ing\b/g)||[]).length;
-  if(ppc>=2) score+=4;
-  else if(ppc===1) score+=2;
-  else if(/\b(have|has)\s+been\b/.test(text)) score+=1; // partial credit for at least starting the structure
-  // Stress/work vocabulary
-  const vocabWords=['stress','pressure','deadline','overwhelm','manage','strategy','strategies','cope','coping','balance','workload','exhaust','burnout','meditat','exercise','break','prioriti','focus','schedule'];
-  score+=Math.min(3,vocabWords.filter(x=>text.includes(x)).length);
-  // Length
-  if(wordCount>=70) score+=2;
-  else if(wordCount>=50) score+=1;
-  // Time markers (typical with Present Perfect Continuous)
-  const timeMarkers=['lately','recently','for','since','all day','all week','this week','this month'];
-  if(timeMarkers.filter(x=>text.includes(x)).length>=1) score+=1;
-  scores.w=Math.min(20,Math.max(10,Math.round(score)));
-  document.getElementById('wFeedback').innerHTML='<b>Score: '+scores.w+'/20</b><br>Great work! This C1 writing score rewards your use of Present Perfect Continuous (have/has been + -ing) to describe ongoing or recent situations. Your teacher will give detailed feedback in class.';
-  document.getElementById('wFeedback').classList.remove('hidden');
+  writingText=document.getElementById('writing').value||'';
+  const raw=writingText.trim();
+  const wordCount=raw?raw.split(/\s+/).filter(Boolean).length:0;
+  if(wordCount<15){alert('Please write at least 15 words');return;}
+  const fb=document.getElementById('wFeedback');
+  fb.innerHTML='<strong>\u2713 Writing Saved</strong><br>'
+    +'Word count: '+wordCount
+    +'<br><br><span style="color:#15803d">\uD83D\uDC69\u200D\uD83C\uDFEB <b>Your teacher will read and grade your writing personally.</b></span>'
+    +'<br><span style="color:#555;font-size:0.92em">Writing isn\'t scored automatically because language quality needs a real reader. Your teacher will follow up with your writing score and feedback.</span>';
+  fb.classList.remove('hidden');
   document.getElementById('wBtn').classList.add('hidden');
   document.getElementById('wNext').classList.remove('hidden');
 }
-function startSpeechRecognition(){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR)return;speechRec=new SR();speechRec.continuous=false;speechRec.interimResults=true;speechRec.lang='en-US';speechRec.onresult=function(event){let finalTranscript='';for(let i=0;i<event.results.length;i++) finalTranscript+=event.results[i][0].transcript+' ';spokenText=finalTranscript.trim();if(spokenText){const box=document.getElementById('transcriptBox');box.textContent='Transcript: '+spokenText;box.classList.remove('hidden');}};speechRec.start();}
-function stopSpeechRecognition(){if(speechRec){try{speechRec.stop();}catch(e){}}}
 function toggleRec(){if(!isRec) startRec(); else stopRec();}
 function startRec(){
   const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
@@ -348,16 +333,16 @@ function submitFinal(){
     cb.id='reviewContinueBtn';
     cb.className='btn btn-orange';
     cb.style.marginTop='15px';
-    cb.textContent='Continue to Results →';
+    cb.textContent='Continue to Results \u2192';
     cb.onclick=function(){showSection('results');};
     s5Card.appendChild(cb);
   }
-  const total=scores.l+scores.v+scores.w+scores.s+scores.g;
-  document.getElementById('finalPct').textContent=Math.round(total/57*100)+'%';
+  const total=scores.l+scores.v+scores.s+scores.g;
+  document.getElementById('finalPct').textContent=Math.round(total/37*100)+'%';
   document.getElementById('studentDisplay').textContent=name;
   document.getElementById('scL').textContent=scores.l+'/3';
   document.getElementById('scV').textContent=scores.v+'/6';
-  document.getElementById('scW').textContent=scores.w+'/20';
+  document.getElementById('scW').textContent='\uD83D\uDC69\u200D\uD83C\uDFEB';
   document.getElementById('scS').textContent=scores.s+'/20';
   document.getElementById('scG').textContent=scores.g+'/8';
   showSection('results');
@@ -369,21 +354,21 @@ function submitToTeacher(){
   var btn=document.getElementById('submitBtn');
   if(btn){btn.disabled=true;btn.textContent='Submitting...';}
   var cls=document.getElementById('className')?document.getElementById('className').value:'';
-  var total=scores.l+scores.v+scores.w+scores.s+scores.g;
-  var totalPct=Math.round(total/57*100)+'%';
+  var total=scores.l+scores.v+scores.s+scores.g;
+  var totalPct=Math.round(total/37*100)+'%';
   var formData=new FormData();
   formData.append('entry.154629934',name);
-  formData.append('entry.771629595',document.getElementById('className')?document.getElementById('className').value:'');
+  formData.append('entry.771629595',cls);
   formData.append('entry.1564061356','7');
   formData.append('entry.1994438750',scores.l+'/3');
   formData.append('entry.1169985852',scores.v+'/6');
-  formData.append('entry.66378887',scores.w+'/20');
+  formData.append('entry.66378887','Teacher will grade');
   formData.append('entry.665897330',scores.s+'/20');
   formData.append('entry.1528226896',scores.g+'/8');
   formData.append('entry.543147037',totalPct);
   formData.append('entry.301386877',writingText||'');
   formData.append('entry.1035810181',spokenText||'No transcript captured');
-  formData.append('entry.1451249480',document.getElementById('teacherName')?document.getElementById('teacherName').value:'Hector Amaya');
+  formData.append('entry.1451249480',document.getElementById('teacherName')?document.getElementById('teacherName').value:'');
   var status=document.getElementById('submitStatus');
   fetch('https://docs.google.com/forms/d/e/1FAIpQLSdrVV8m2p8QcgXK-ifK2H6By1kwAdcPm-Yp5SyB6DBgfOTiGw/formResponse',{method:'POST',mode:'no-cors',body:formData})
     .then(function(){
@@ -396,9 +381,6 @@ function submitToTeacher(){
       if(status){status.textContent='Submission failed. Check your internet and try again.';status.style.display='block';status.style.background='#fef2f2';status.style.color='#dc2626';}
     });
 }
-
-
-
 </script>
 </body>
 </html>
