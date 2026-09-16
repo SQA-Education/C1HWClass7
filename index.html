@@ -214,7 +214,7 @@ function startQuiz(){
 function sel(el){el.parentElement.querySelectorAll('.option').forEach(o=>o.classList.remove('selected'));el.classList.add('selected');}
 function initQuestions(){
   const rQs=shuffle([...readingQBank]).slice(0,3);let rHTML='';
-  rQs.forEach((q,i)=>{const opts=q.opts.map((t,idx)=>({text:t,isCorrect:idx===q.correct}));shuffle(opts);readingAnswers[i]=opts.findIndex(o=>o.isCorrect);rHTML+=`<div class="question"><h4>${i+1}. ${q.q}</h4>`;opts.forEach((opt,j)=>rHTML+=`<div class="option" onclick="sel(this)" data-v="${j}"><div class="circle"></div>${opt.text}</div>`);rHTML+='</div>';});
+  rQs.forEach((q,i)=>{const opts=q.opts.map((t,idx)=>({text:t,isCorrect:idx===q.correct}));shuffle(opts);readingAnswers[i]=opts.findIndex(o=>o.isCorrect);rHTML+=`<div class="question" data-c="${readingAnswers[i]}"><h4>${i+1}. ${q.q}</h4>`;opts.forEach((opt,j)=>rHTML+=`<div class="option" onclick="sel(this)" data-v="${j}"><div class="circle"></div>${opt.text}</div>`);rHTML+='</div>';});
   document.getElementById('readingQuestions').innerHTML=rHTML;
   let bankHTML='',dropHTML='';const pairs=shuffle([...vocabPairs]).slice(0,6);const words=shuffle(pairs.map(p=>p.word));
   words.forEach(w=>bankHTML+=`<div class="word" onclick="pickWord(this)">${w}</div>`);
@@ -430,7 +430,7 @@ function submitFinal(){
     if(s&&parseInt(s.dataset.v)!==a){s.classList.add('wrong-reveal');}
     q.querySelectorAll('.option').forEach(o=>o.classList.add('review-locked'));
   });
-  scores.g=c;
+  scores.g=c;scores.l=0;document.querySelectorAll('#readingQuestions .question').forEach(function(q){var s=q.querySelector('.option.selected');if(s&&parseInt(s.dataset.v)===parseInt(q.dataset.c))scores.l++;});scores.v=0;document.querySelectorAll('.drop-target').forEach(function(t){if(t.textContent===t.dataset.a)scores.v++;});
   const submitBtn=document.querySelector('#s5 .btn-orange');
   if(submitBtn)submitBtn.style.display='none';
   const s5Card=document.querySelector('#s5 .card');
